@@ -18,11 +18,19 @@ public class NumbersTo999 {
 			return null;
 		}
 		else if (Num1<100) {
-			int Zehnerstelle = Num1/10;
-			int Einerstelle = Num1%10;
-			String FullName;
-			FullName = ZehnerstelleName[Zehnerstelle] + " " + EinerstelleName[Einerstelle];
-			return FullName;
+			if (Num1%10==0) {
+				int Zehnerstelle = Num1/10;
+				String FullName;
+				FullName = ZehnerstelleName[Zehnerstelle];
+				return FullName;
+			}
+			else {
+				int Zehnerstelle = Num1/10;
+				int Einerstelle = Num1%10;
+				String FullName;
+				FullName = ZehnerstelleName[Zehnerstelle] + "-" + EinerstelleName[Einerstelle];
+				return FullName;
+			}
 		}
 		else {
 			int Hunderterstelle = Num1/100;
